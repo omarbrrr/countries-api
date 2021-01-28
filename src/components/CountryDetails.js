@@ -29,7 +29,7 @@ export default function CountryDetails({ country, setSelectedCountry }) {
         <p className="back__text">Back</p>
       </div>
 
-      {details !== null ? (
+      {details !== null && (
         <div className="country-details">
           <div className="country__img-container">
             <img src={details.flag} className="country__flag" alt="" />
@@ -76,8 +76,6 @@ export default function CountryDetails({ country, setSelectedCountry }) {
             </div>
           </div>
         </div>
-      ) : (
-        <span>Loading...</span>
       )}
     </>
   );

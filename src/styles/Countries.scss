@@ -1,6 +1,7 @@
 @import 'colors.scss';
 
 .countries-container {
+  position: relative;
   display: grid;
   grid-template-columns: 1fr;
   row-gap: 40px;
