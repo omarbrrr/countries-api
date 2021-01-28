@@ -1,0 +1,23 @@
+@import 'colors.scss';
+
+.header {
+  position: relative;
+  background-color: $white;
+  padding: 35px 25px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 5px $light-mode-shadow;
+  z-index: 1000;
+
+  &__logo {
+    font-size: 1.6rem;
+    font-weight: 800;
+  }
+
+  &__toggle-dark-mode {
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+  }
+}
