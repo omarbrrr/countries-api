@@ -1,0 +1,26 @@
+@import 'colors.scss';
+
+.filter {
+  width: 70%;
+  margin-top: 40px;
+  font-weight: 600;
+  color: $input-icon;
+
+  >div {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: -1px 2px 5px $light-mode-shadow;
+    background-color: $white;
+
+  }
+
+  // &__text {
+  //   font-weight: 600;
+  // }
+
+  // &__icon {
+  //   margin: 0 10px;
+  //   color: $input-icon;
+  // }
+}
