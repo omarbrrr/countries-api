@@ -11,6 +11,8 @@ import Countries from "./Countries";
 
 function App() {
   const [countries, setCountries] = useState([]);
+  const [queryCountries, setQueryCountries] = useState([]);
+
   const [region, setRegion] = useState("");
 
   const searchRef = useRef(null);
@@ -25,12 +27,23 @@ function App() {
     const newCountries = res.data;
 
     setCountries(newCountries);
+    setQueryCountries(newCountries);
   };
 
   const onSearchChange = () => {
     const query = searchRef.current.value;
 
-    console.log(query);
+    if (query === "") {
+      setQueryCountries(countries);
+    } else {
+      const newCountries = countries.filter((country) => {
+        const lowerName = country.name.toLowerCase();
+        const lowerQuery = query.toLowerCase();
+
+        if (lowerName.includes(lowerQuery)) return country;
+      });
+      setQueryCountries(newCountries);
+    }
   };
 
   const onFilterChange = (region) => {
@@ -47,7 +60,7 @@ function App() {
       <div className="main">
         <SearchBox searchRef={searchRef} onSearchChange={onSearchChange} />
         <FilterDropdown onFilterChange={onFilterChange} />
-        <Countries countries={countries} />
+        <Countries countries={queryCountries} />
       </div>
     </div>
   );
