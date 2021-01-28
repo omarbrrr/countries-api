@@ -12,6 +12,7 @@ import Countries from "./Countries";
 function App() {
   const [countries, setCountries] = useState([]);
   const [queryCountries, setQueryCountries] = useState([]);
+  const [filteredCountries, setFilteredCountries] = useState([]);
 
   const [region, setRegion] = useState("");
 
@@ -22,12 +23,20 @@ function App() {
     console.log("fetched");
   }, []);
 
+  useEffect(() => {
+    const newCountries = queryCountries.filter((country) =>
+      country.region.includes(region)
+    );
+    setFilteredCountries(newCountries);
+  }, [queryCountries, region]);
+
   const fetchCountries = async () => {
     const res = await axios.get("https://restcountries.eu/rest/v2/all");
     const newCountries = res.data;
 
     setCountries(newCountries);
     setQueryCountries(newCountries);
+    setFilteredCountries(newCountries);
   };
 
   const onSearchChange = () => {
@@ -60,7 +69,7 @@ function App() {
       <div className="main">
         <SearchBox searchRef={searchRef} onSearchChange={onSearchChange} />
         <FilterDropdown onFilterChange={onFilterChange} />
-        <Countries countries={queryCountries} />
+        <Countries countries={filteredCountries} />
       </div>
     </div>
   );
