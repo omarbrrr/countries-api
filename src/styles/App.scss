@@ -1,0 +1,14 @@
+@import 'base.scss';
+@import 'colors.scss';
+
+.App {
+  p {
+    color: $light-mode-text;
+  }
+
+  .main {
+    background-color: $light-mode-bg;
+    padding: 20px;
+    min-height: 200vh;
+  }
+}
