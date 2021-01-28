@@ -5,7 +5,9 @@ export default function Country({ country }) {
 
   return (
     <div className="country">
-      <img src={flag} className="country__flag" alt="" />
+      <div className="country__flag-container">
+        <img src={flag} className="country__flag" alt="" />
+      </div>
       <div className="country__content">
         <h2 className="country__title">{name}</h2>
         <p className="country__subtitle">

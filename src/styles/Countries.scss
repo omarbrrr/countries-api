@@ -28,7 +28,6 @@
 }
 
 .country {
-  // width: 100%;
   display: flex;
   flex-direction: column;
   background-color: $white;
@@ -36,20 +35,28 @@
   box-shadow: -1px 2px 5px $light-mode-shadow;
   overflow: hidden;
 
-  // @media screen and (min-width: 600px) {
-  //   width: 45%;
-  // }
-
-  // @media screen and (min-width: 900px) {
-  //   width: 30%;
-  // }
-
-  // @media screen and (min-width: 1200px) {
-  //   width: 21%;
-  // }
-
-  &__img {
+  &__flag-container {
     width: 100%;
+    height: 46vw;
+    display: flex;
+
+    @media screen and (min-width: 600px) {
+      height: 25vw;
+    }
+
+    @media screen and (min-width: 900px) {
+      height: 18vw;
+    }
+
+    @media screen and (min-width: 1200px) {
+      height: 14vw;
+      max-height: 200px;
+    }
+
+    >img {
+      width: 100%;
+      height: 100%;
+    }
   }
 
   &__content {
