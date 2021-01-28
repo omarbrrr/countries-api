@@ -20,7 +20,6 @@ function App() {
 
   useEffect(() => {
     fetchCountries();
-    console.log("fetched");
   }, []);
 
   useEffect(() => {
@@ -45,12 +44,11 @@ function App() {
     if (query === "") {
       setQueryCountries(countries);
     } else {
-      const newCountries = countries.filter((country) => {
-        const lowerName = country.name.toLowerCase();
-        const lowerQuery = query.toLowerCase();
+      const lowerQuery = query.toLowerCase();
 
-        if (lowerName.includes(lowerQuery)) return country;
-      });
+      const newCountries = countries.filter((country) =>
+        country.name.toLowerCase().includes(lowerQuery)
+      );
       setQueryCountries(newCountries);
     }
   };
@@ -67,8 +65,10 @@ function App() {
     <div className="App">
       <Header />
       <div className="main">
-        <SearchBox searchRef={searchRef} onSearchChange={onSearchChange} />
-        <FilterDropdown onFilterChange={onFilterChange} />
+        <div className="filters">
+          <SearchBox searchRef={searchRef} onSearchChange={onSearchChange} />
+          <FilterDropdown onFilterChange={onFilterChange} />
+        </div>
         <Countries countries={filteredCountries} />
       </div>
     </div>

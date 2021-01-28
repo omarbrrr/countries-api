@@ -12,15 +12,11 @@
     border-radius: 10px;
     box-shadow: -1px 2px 5px $light-mode-shadow;
     background-color: $white;
-
   }
 
-  // &__text {
-  //   font-weight: 600;
-  // }
-
-  // &__icon {
-  //   margin: 0 10px;
-  //   color: $input-icon;
-  // }
+  @media screen and (min-width: 600px) {
+    margin-top: 0;
+    width: 20%;
+    min-width: 200px;
+  }
 }

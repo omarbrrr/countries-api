@@ -11,4 +11,12 @@
     padding: 20px;
     min-height: 200vh;
   }
+
+  .filters {
+    @media screen and (min-width: 600px) {
+      display: flex;
+      justify-content: space-between;
+      padding: 0 24px;
+    }
+  }
 }
