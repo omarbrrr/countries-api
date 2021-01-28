@@ -2,12 +2,10 @@
 @import 'colors.scss';
 
 .App {
-  p {
-    color: $light-mode-text;
-  }
+  color: $light-text;
 
   .main {
-    background-color: $light-mode-bg;
+    background-color: $light-bg;
     padding: 20px;
     min-height: 200vh;
   }
@@ -18,5 +16,13 @@
       justify-content: space-between;
       padding: 0 24px;
     }
+  }
+}
+
+.dark-mode {
+  color: $dark-text;
+
+  .main {
+    background-color: $dark-bg;
   }
 }

@@ -10,6 +10,8 @@ import FilterDropdown from "./FilterDropdown";
 import Countries from "./Countries";
 
 function App() {
+  const [darkMode, setDarkMode] = useState(true);
+
   const [countries, setCountries] = useState([]);
   const [queryCountries, setQueryCountries] = useState([]);
   const [filteredCountries, setFilteredCountries] = useState([]);
@@ -62,8 +64,8 @@ function App() {
   };
 
   return (
-    <div className="App">
-      <Header />
+    <div className={`App ${darkMode ? "dark-mode" : ""}`}>
+      <Header darkMode={darkMode} setDarkMode={setDarkMode} />
       <div className="main">
         <div className="filters">
           <SearchBox searchRef={searchRef} onSearchChange={onSearchChange} />

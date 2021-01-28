@@ -2,8 +2,6 @@
 
 .countries-container {
   display: grid;
-  // display: flex;
-  // flex-direction: column;
   grid-template-columns: 1fr;
   row-gap: 40px;
   margin: 40px auto 0;
@@ -30,9 +28,9 @@
 .country {
   display: flex;
   flex-direction: column;
-  background-color: $white;
+  background-color: $light-bg-2;
   border-radius: 10px;
-  box-shadow: -1px 2px 5px $light-mode-shadow;
+  box-shadow: -1px 2px 5px $light-shadow;
   overflow: hidden;
 
   &__flag-container {
@@ -78,4 +76,9 @@
   &__value {
     font-weight: 300;
   }
+}
+
+.dark-mode .country {
+  background-color: $dark-bg-2;
+  box-shadow: -1px 2px 5px $dark-shadow;
 }

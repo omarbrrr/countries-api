@@ -1,11 +1,13 @@
-$dark-mode-text: hsl(209, 23%, 22%);
-$dark-mode-bg: hsl(207, 26%, 17%);
+$light-bg: #fafafa;
+$light-bg-2: #fff;
+$light-shadow: #e6e6e6;
+$light-text: #111517;
+
+$dark-bg: #202D36;
+$dark-bg-2: #2B3743;
+$dark-shadow: #20272c;
+$dark-text: #fff;
 
 $input-icon: hsl(0, 0%, 52%);
 $input-text: hsl(0, 0%, 75%);
-
-$light-mode-text: hsl(200, 15%, 8%);
-$light-mode-bg: hsl(0, 0%, 98%);
-$light-mode-shadow: hsl(0, 0%, 90%);
-
-$white: hsl(0, 0%, 100%);
+$light-mode-shadow: #e6e6e6;

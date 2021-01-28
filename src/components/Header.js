@@ -1,10 +1,10 @@
-import React from 'react';
-import '../styles/Header.scss';
+import React from "react";
+import "../styles/Header.scss";
 
 // Icons
-import { Moon } from "react-feather";
+import { Moon, Sun } from "react-feather";
 
-export default function Header() {
+export default function Header({ darkMode, setDarkMode }) {
   return (
     <header className="header">
       <a href="/" className="header__logo">
@@ -12,8 +12,20 @@ export default function Header() {
       </a>
 
       <div className="header__toggle-dark-mode">
-        <Moon size={24} className="header__toggle-icon"/>
+        {darkMode ? (
+          <Sun
+            size={24}
+            className="header__toggle-icon"
+            onClick={() => setDarkMode(false)}
+          />
+        ) : (
+          <Moon
+            size={24}
+            className="header__toggle-icon"
+            onClick={() => setDarkMode(true)}
+          />
+        )}
       </div>
     </header>
-  )
+  );
 }

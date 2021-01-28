@@ -2,12 +2,12 @@
 
 .header {
   position: relative;
-  background-color: $white;
+  background-color: $light-bg-2;
   padding: 35px 25px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  box-shadow: 0 2px 5px $light-mode-shadow;
+  box-shadow: 0 2px 5px $light-shadow;
   z-index: 1000;
 
   &__logo {
@@ -19,5 +19,11 @@
     display: flex;
     align-items: center;
     font-weight: 600;
+    cursor: pointer;
   }
+}
+
+.dark-mode .header {
+  background-color: $dark-bg-2;
+  box-shadow: -1px 2px 5px $dark-shadow;
 }
