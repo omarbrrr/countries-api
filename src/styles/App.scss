@@ -6,15 +6,18 @@
 
   .main {
     background-color: $light-bg;
-    padding: 20px;
-    min-height: 200vh;
+    padding: 20px 24px;
+    min-height: 100vh;
+
+    @media screen and (min-width: 600px) {
+      padding: 20px 48px;
+    }
   }
 
   .filters {
     @media screen and (min-width: 600px) {
       display: flex;
       justify-content: space-between;
-      padding: 0 24px;
     }
   }
 }
