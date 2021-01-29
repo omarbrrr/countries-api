@@ -7,9 +7,7 @@ import { Moon, Sun } from "react-feather";
 export default function Header({ darkMode, setDarkMode }) {
   return (
     <header className="header">
-      <a href="/" className="header__logo">
-        Where in the world?
-      </a>
+      <p className="header__logo">Where in the world?</p>
 
       <div className="header__toggle-dark-mode">
         {darkMode ? (
