@@ -19,7 +19,6 @@ export default function CountryDetails({ country, setSelectedCountry }) {
     const data = res.data[0];
 
     setDetails(data);
-    console.log(data);
   };
 
   return (

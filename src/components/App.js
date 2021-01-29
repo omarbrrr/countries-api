@@ -7,7 +7,7 @@ import Home from "./Home";
 import CountryDetails from "./CountryDetails";
 
 function App() {
-  const [darkMode, setDarkMode] = useState(true);
+  const [darkMode, setDarkMode] = useState(false);
   const [selectedCountry, setSelectedCountry] = useState("");
 
   return (
