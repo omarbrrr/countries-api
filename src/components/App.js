@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import "../styles/App.scss";
 
@@ -9,6 +9,10 @@ import CountryDetails from "./CountryDetails";
 function App() {
   const [darkMode, setDarkMode] = useState(false);
   const [selectedCountry, setSelectedCountry] = useState("");
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [selectedCountry]);
 
   return (
     <div className={`App ${darkMode ? "dark-mode" : ""}`}>
