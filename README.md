@@ -8,7 +8,7 @@ This web app shows information on all the countries in the world.
 - Axios
 - SCSS
 
-### Misc.
+#### Misc.
 
 - Feather Icons
 - VSCode
