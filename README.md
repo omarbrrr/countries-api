@@ -26,4 +26,6 @@ Users are able to:
 
 ## This is a Frontend Mentor Challenge
 
+I don't own the design, information or assets used here. This is a coding challenge.
+
 [More details on the challenge](https://www.frontendmentor.io/challenges/rest-countries-api-with-color-theme-switcher-5cacc469fec04111f7b848ca)
