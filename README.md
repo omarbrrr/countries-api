@@ -8,10 +8,9 @@ This web app shows information on all the countries in the world.
 - Axios
 - SCSS
 
-#### Misc.
+#### API
 
-- Feather Icons
-- VSCode
+- All country information and flags are being pulled from the [REST Countries API](https://restcountries.eu).
 
 Mobile first approach with responsive design. Light/Dark themes.
 
@@ -24,10 +23,6 @@ Users are able to:
 - Filter countries by region
 - Click on a country to see more detailed information on a separate page
 - Toggle the color scheme between light and dark mode
-
-## API
-
-All country information and flags are being pulled from the [REST Countries API](https://restcountries.eu).
 
 ## This is a Frontend Mentor Challenge
 
