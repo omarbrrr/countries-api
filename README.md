@@ -1,6 +1,19 @@
-# Frontend Mentor - REST Countries API with color theme switcher
+# REST Countries API with color theme switcher
 
-Developed with ReactJS and SCSS. Mobile first approach, responsive design, light/dark themes.
+This web app shows information on all the countries in the world.
+
+## Developed with:
+
+- React
+- Axios
+- SCSS
+
+### Misc.
+
+- Feather Icons
+- VSCode
+
+Mobile first approach with responsive design. Light/Dark themes.
 
 ## Features
 
@@ -16,4 +29,6 @@ Users are able to:
 
 All country information and flags are being pulled from the [REST Countries API](https://restcountries.eu).
 
-[More details on the challenge](https://www.frontendmentor.io/challenges/rest-countries-api-with-color-theme-switcher-5cacc469fec04111f7b848ca/hub/rest-countries-api-with-color-theme-switcher-jTEfd1I9M)
+## This is a Frontend Mentor Challenge
+
+[More details on the challenge](https://www.frontendmentor.io/challenges/rest-countries-api-with-color-theme-switcher-5cacc469fec04111f7b848ca)
