@@ -16,7 +16,9 @@ export default function Countries({ countries, setSelectedCountry }) {
           />
         ))
       ) : (
-        <Loader />
+        <p className="countries-text">
+          There're no countries with the specified filters.
+        </p>
       )}
     </div>
   );
