@@ -24,6 +24,8 @@ Users are able to:
 - Click on a country to see more detailed information on a separate page
 - Toggle the color scheme between light and dark mode
 
+The app is currently [live here](https://omarbr41.github.io/countries-api/)
+
 ## This is a Frontend Mentor Challenge
 
 I don't own the design, information or assets used here. This is a coding challenge.
