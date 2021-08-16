@@ -1,7 +1,6 @@
 import React from "react";
 import "../styles/Countries.scss";
 
-import Loader from "./Loader";
 import Country from "./Country";
 
 export default function Countries({ countries, setSelectedCountry }) {
