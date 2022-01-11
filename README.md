@@ -10,7 +10,7 @@ This web app shows information on all the countries in the world.
 
 #### API
 
-- All country information and flags are being pulled from the [REST Countries API](https://restcountries.eu).
+- All country information and flags are being pulled from the [REST Countries API](https://restcountries.com/).
 
 Mobile first approach with responsive design. Light/Dark themes.
 
