@@ -1,11 +1,11 @@
-import { useEffect, useState } from "react";
-import "../styles/CountryDetails.scss";
+import { useEffect, useState } from 'react';
+import '../styles/CountryDetails.scss';
 
-import axios from "axios";
+import axios from 'axios';
 
-import { ArrowLeft } from "react-feather";
+import { ArrowLeft } from 'react-feather';
 
-export default function CountryDetails({ country, setSelectedCountry }) {
+export default function CountryDetails({ code, setSelectedCountry }) {
   const [details, setDetails] = useState(null);
 
   useEffect(() => {
@@ -13,17 +13,16 @@ export default function CountryDetails({ country, setSelectedCountry }) {
   }, []);
 
   const fetchDetails = async () => {
-    const res = await axios.get(
-      `https://restcountries.eu/rest/v2/name/${country}`
-    );
+    const res = await axios.get(`https://restcountries.com/v3.1/alpha/${code}`);
     const data = res.data[0];
 
+    console.log(res.data[0]);
     setDetails(data);
   };
 
   return (
     <>
-      <div className="back" onClick={() => setSelectedCountry("")}>
+      <div className="back" onClick={() => setSelectedCountry('')}>
         <ArrowLeft size={16} className="back__arrow" />
         <p className="back__text">Back</p>
       </div>
@@ -31,15 +30,11 @@ export default function CountryDetails({ country, setSelectedCountry }) {
       {details !== null && (
         <div className="country-details">
           <div className="country__img-container">
-            <img src={details.flag} className="country__flag" alt="" />
+            <img src={details.flags.svg} className="country__flag" alt="" />
           </div>
           <div className="country__info-container">
-            <h1 className="country__title">{details.name}</h1>
+            <h1 className="country__title">{details.name.official}</h1>
             <div className="country__info">
-              <p className="country__subtitle">
-                <span className="country__value">Native Name: </span>
-                {details.nativeName}
-              </p>
               <p className="country__subtitle">
                 <span className="country__value">Population: </span>
                 {details.population.toLocaleString()}
@@ -54,23 +49,17 @@ export default function CountryDetails({ country, setSelectedCountry }) {
               </p>
               <p className="country__subtitle">
                 <span className="country__value">Capital: </span>
-                {details.capital}
-              </p>
-              <p className="country__subtitle">
-                <span className="country__value">Top Level Domain: </span>
-                {details.topLevelDomain}
+                {details.capital[0]}
               </p>
               <p className="country__subtitle">
                 <span className="country__value">Currencies: </span>
-                {details.currencies
-                  .map((currency) => currency.name)
-                  .reduce((prev, curr) => [prev, ", ", curr])}
+                {Object.values(details.currencies)
+                  .map(({ name, symbol }) => `${name} (${symbol})`)
+                  .join(', ')}
               </p>
               <p className="country__subtitle">
                 <span className="country__value">Languages: </span>
-                {details.languages
-                  .map((language) => language.name)
-                  .reduce((prev, curr) => [prev, ", ", curr])}
+                {Object.values(details.languages).join(', ')}
               </p>
             </div>
           </div>

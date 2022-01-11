@@ -1,7 +1,7 @@
-import React from "react";
-import "../styles/Countries.scss";
+import React from 'react';
+import '../styles/Countries.scss';
 
-import Country from "./Country";
+import Country from './Country';
 
 export default function Countries({ countries, setSelectedCountry }) {
   return (
@@ -9,7 +9,7 @@ export default function Countries({ countries, setSelectedCountry }) {
       {countries.length > 0 ? (
         countries.map((country) => (
           <Country
-            key={country.alpha3Code}
+            key={country.cca3}
             country={country}
             setSelectedCountry={setSelectedCountry}
           />

@@ -1,29 +1,29 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 
-import "../styles/App.scss";
+import '../styles/App.scss';
 
-import Header from "./Header";
-import Home from "./Home";
-import CountryDetails from "./CountryDetails";
+import Header from './Header';
+import Home from './Home';
+import CountryDetails from './CountryDetails';
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
-  const [selectedCountry, setSelectedCountry] = useState("");
+  const [selectedCountry, setSelectedCountry] = useState('');
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [selectedCountry]);
 
   return (
-    <div className={`App ${darkMode ? "dark-mode" : ""}`}>
+    <div className={`App ${darkMode ? 'dark-mode' : ''}`}>
       <Header darkMode={darkMode} setDarkMode={setDarkMode} />
 
       <div className="main">
-        {selectedCountry === "" ? (
+        {selectedCountry === '' ? (
           <Home setSelectedCountry={setSelectedCountry} />
         ) : (
           <CountryDetails
-            country={selectedCountry}
+            code={selectedCountry}
             setSelectedCountry={setSelectedCountry}
           />
         )}

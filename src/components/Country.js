@@ -1,15 +1,15 @@
-import React from "react";
+import React from 'react';
 
 export default function Country({ country, setSelectedCountry }) {
-  const { flag, name, population, region, capital } = country;
+  const { flag, flags, name, cca3, population, region, capital } = country;
 
   return (
-    <div className="country" onClick={() => setSelectedCountry(name)}>
+    <div className="country" onClick={() => setSelectedCountry(cca3)}>
       <div className="country__flag-container">
-        <img src={flag} className="country__flag" alt="" />
+        <img src={flags.svg} className="country__flag" alt={`${flag} Flag`} />
       </div>
       <div className="country__content">
-        <h2 className="country__title">{name}</h2>
+        <h2 className="country__title">{name.official}</h2>
 
         <p className="country__subtitle">
           <span className="country__value">Population: </span>
@@ -21,7 +21,7 @@ export default function Country({ country, setSelectedCountry }) {
         </p>
         <p className="country__subtitle">
           <span className="country__value">Capital: </span>
-          {capital}
+          {capital && capital[0]}
         </p>
       </div>
     </div>

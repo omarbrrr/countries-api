@@ -1,18 +1,18 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from 'react';
 
-import axios from "axios";
+import axios from 'axios';
 
-import SearchBox from "./SearchBox";
-import FilterDropdown from "./FilterDropdown";
-import Countries from "./Countries";
-import Loader from "./Loader";
+import SearchBox from './SearchBox';
+import FilterDropdown from './FilterDropdown';
+import Countries from './Countries';
+import Loader from './Loader';
 
 export default function Home({ setSelectedCountry }) {
   const [countries, setCountries] = useState([]);
   const [queryCountries, setQueryCountries] = useState([]);
   const [filteredCountries, setFilteredCountries] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [region, setRegion] = useState("");
+  const [region, setRegion] = useState('');
 
   const searchRef = useRef(null);
 
@@ -22,15 +22,16 @@ export default function Home({ setSelectedCountry }) {
 
   useEffect(() => {
     const newCountries = queryCountries.filter((country) =>
-      country.region.includes(region)
+      country.region.includes(region),
     );
     setFilteredCountries(newCountries);
   }, [queryCountries, region]);
 
   const fetchCountries = async () => {
     setLoading(true);
-    const res = await axios.get("https://restcountries.eu/rest/v2/all");
+    const res = await axios.get('https://restcountries.com/v3.1/all');
     const newCountries = res.data;
+    console.log(res.data[0]);
 
     setCountries(newCountries);
     setQueryCountries(newCountries);
@@ -41,13 +42,13 @@ export default function Home({ setSelectedCountry }) {
   const onSearchChange = () => {
     const query = searchRef.current.value;
 
-    if (query === "") {
+    if (query === '') {
       setQueryCountries(countries);
     } else {
       const lowerQuery = query.toLowerCase();
 
       const newCountries = countries.filter((country) =>
-        country.name.toLowerCase().includes(lowerQuery)
+        country.name.toLowerCase().includes(lowerQuery),
       );
       setQueryCountries(newCountries);
     }
@@ -55,7 +56,7 @@ export default function Home({ setSelectedCountry }) {
 
   const onFilterChange = (region) => {
     if (region === null) {
-      setRegion("");
+      setRegion('');
     } else {
       setRegion(region.label);
     }
